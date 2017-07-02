@@ -21,3 +21,16 @@ iOS Manual Reloading: Cmd + R in Simulator
 <b>Android Hot Reloading:</b> Cmd + M in Simulator, then choose "Enable Hot Reload"
 
 Android Manual Reloading: R + R in Simulator
+
+-------------------------------------------------------------------------------------------------
+<b>When to use separate Android/iOS Components, 3rd party dependencies, or go full blown NATIVE</b>
+
+1. Look for 3rd party components
+2. Look for React Native components
+3. Implement in Swift/Java
+
+The decision of how to go about implementing a component is made with the following goals in mind:
+
+* Don't optimize code TOO early
+* Move fast and break things
+* Don't re-invent the wheel
