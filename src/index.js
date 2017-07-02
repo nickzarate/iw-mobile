@@ -19,7 +19,7 @@ const Content = (props) => {
   if (props.loggedIn)
     return <LoggedIn />
   else
-    return <Button onPress={ props.actions.login } title="Not logged in" />
+    return <Button onPress={ props.actions.login } title="Not logged in!" />
 }
 
 Content = connect({
