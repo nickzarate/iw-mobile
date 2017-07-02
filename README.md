@@ -13,7 +13,10 @@ $ react-native run-android
 ```
 
 iOS Hot Reloading: In the iOS Simulator, type Cmd + D, then choose "Enable Hot Reload"
+
 Otherwise type Cmd + R to reload
 
+
 Android Hot Reloading: In the Android Simulator, type Cmd + M, then choose "Enable Hot Reload"
+
 Otherwise type R + R to reload
