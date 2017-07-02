@@ -1,3 +1,5 @@
+# Development
+
 To start developing, ensure your environment is set up properly: https://facebook.github.io/react-native/releases/0.23/docs/getting-started.html#content
 
 Once Xcode and Android Studios are set up properly, issue the following command
