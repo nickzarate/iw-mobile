@@ -5,24 +5,37 @@ import connect from '../../config/connect'
 import { login } from '../../actions'
 
 class Auth extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleLogin = this.handleLogin.bind(this)
+  }
+
+  handleLogin() {
+    this.props.actions.login(this.email._lastNativeText, this.password._lastNativeText)
+  }
+
   render() {
     return (
       <View style={ styles.container }>
         <Text style={ styles.logo }>{ 'Insert IronWill Logo' }</Text>
+        <Text style={ styles.error }>{ this.props.authentication.loginError }</Text>
         <TextInput
-          style={ styles.input }
-          autocorrect={ false }
+          autoCapitalize='none'
+          autoCorrect={ false }
           keyboardType='email-address'
           placeholder='email'
+          ref={ (v) => { this.email = v } }
           returnKeyType='next'
+          style={ styles.input }
         />
         <TextInput
-          style={ styles.input }
-          autocorrect={ false }
+          autoCorrect={ false }
           placeholder='password'
+          ref={ (v) => { this.password = v } }
           secureTextEntry={ true }
+          style={ styles.input }
         />
-        <Button onPress={ this.props.actions.login } title='Log In' />
+        <Button onPress={ this.handleLogin } title='Log In' />
         <Text>{ 'Forgot Password?' }</Text>
         <Text>{ 'Don\'t have an account? SIGN UP' }</Text>
       </View>
@@ -31,6 +44,6 @@ class Auth extends React.Component {
 }
 
 export default connect({
-  selector: '',
+  state: 'authentication',
   actions: { login }
 })(Auth)

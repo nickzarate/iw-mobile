@@ -1,4 +1,4 @@
-import { login } from './onboarding'
+import { login } from './authentication'
 
 export {
   login

@@ -2,14 +2,14 @@ import React from 'react'
 import { Button } from 'react-native'
 import { createStructuredSelector } from 'reselect'
 import connect from './config/connect'
-import { login } from './actions/'
+import { login } from './actions'
 
 import User from './layouts/User'
 import Auth from './layouts/Auth'
 
 
 const loggedIn = createStructuredSelector({
-  loggedIn: (state) => state.onboarding.loggedIn
+  loggedIn: (state) => state.authentication.loggedIn
 })
 
 const App = (props) => {
