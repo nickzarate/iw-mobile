@@ -7,20 +7,10 @@ import { login } from './actions'
 import User from './layouts/User'
 import Auth from './layouts/Auth'
 
-
-const loggedIn = createStructuredSelector({
-  loggedIn: (state) => state.authentication.loggedIn
-})
-
 const App = (props) => {
-  console.log(props)
-  if (props.loggedIn)
-    return <User />
-  else
-    return <Auth />
+  return props.loggedIn ? <User /> : <Auth />
 }
 
 export default connect({
-  selector: loggedIn,
-  actions: { login },
+  selector: createStructuredSelector({ loggedIn : (state) => state.authentication.loggedIn })
 })(App)
