@@ -2,25 +2,17 @@ import React from 'react'
 import { Button } from 'react-native'
 import { createStructuredSelector } from 'reselect'
 import connect from './config/connect'
-import { login } from './actions/'
+import { login } from './layouts/Login/actions'
 
+/* Import Layouts */
 import User from './layouts/User'
-import Auth from './layouts/Auth'
+import Login from './layouts/Login'
 
-
-const loggedIn = createStructuredSelector({
-  loggedIn: (state) => state.onboarding.loggedIn
-})
-
+/* Root of the entire application */
 const App = (props) => {
-  console.log(props)
-  if (props.loggedIn)
-    return <User />
-  else
-    return <Auth />
+  return props.loggedIn ? <User /> : <Login />
 }
 
 export default connect({
-  selector: loggedIn,
-  actions: { login },
+  selector: createStructuredSelector({ loggedIn : (state) => state.login.loggedIn })
 })(App)

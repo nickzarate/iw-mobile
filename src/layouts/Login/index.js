@@ -1,5 +1,5 @@
-import Auth from './Auth'
+import Login from './Login'
 import styles from './styles'
 
-export default Auth
+export default Login
 export { styles }
