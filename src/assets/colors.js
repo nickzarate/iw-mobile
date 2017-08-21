@@ -1,0 +1,6 @@
+export const darkGray = '#434343'
+export const gray = '#727172'
+export const red = '#e04145'
+export const red1 = '#c13a3d'
+export const red2 = '#6b2021'
+export const cream = '#e8e6e6'
