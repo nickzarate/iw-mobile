@@ -1,6 +1,10 @@
-import login from '../layouts/Login/reducer'
+import login from '../Auth/Login/reducer'
+import nav from '../App/navReducer'
+import signup from '../Auth/Signup/reducer'
 import { combineReducers } from 'redux'
 
 export default combineReducers({
-  login
+  login,
+  nav,
+  signup
 })
