@@ -9,10 +9,10 @@ const ProgressBar = (props) => {
   const renderProgress = () => {
     var bars = []
     for (var i = 0; i < props.bars; i++) {
-      bars.push(<View key={ i } style={ styles.blueBar } />)
+      bars.push(<View key={ i } style={ styles.filledDot } />)
     }
     for (var i = numBars; i > props.bars; i--) {
-      bars.push(<View key={ i } style={ styles.whiteBar } />)
+      bars.push(<View key={ i } style={ styles.emptyDot } />)
     }
     return bars
   }

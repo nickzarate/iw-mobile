@@ -3,16 +3,24 @@ import { View, Text, TextInput, Button } from 'react-native'
 import connect from '../../config/connect'
 import ProgressBar from './ProgressBar'
 import styles from './styles'
+import Header from './Header2'
 
 const Signup3 = (props) => {
+
+  const handleNext = () => {
+    console.log(props)
+    props.navigation.navigate('Signup4')
+  }
+
   return (
-    <View style={ { flex: 1 } }>
+    <View style={ styles.container }>
+      <Header onForward={ () => handleNext() } onBack={ () => props.navigation.goBack() } />
       <ProgressBar bars={ 3 } />
-      <Text style={ styles.information }>{ 'Activity information' }</Text>
-      <Button style={ { height: 200 } } title='Next' onPress={ () => props.navigation.navigate('Signup4') } />
+
     </View>
   )
 }
 
 export default connect({
+  state: 'nav'
 })(Signup3)

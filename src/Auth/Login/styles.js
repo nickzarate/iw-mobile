@@ -1,55 +1,58 @@
 import { StyleSheet } from 'react-native'
-
+import { sf, sw, sh } from '../../utils/scale'
 import { red, gray, darkGray } from '../../assets/colors'
 
 export default StyleSheet.create({
   button: {
     borderRadius: 20,
     height: 40,
-    width: 275,
-    marginTop: 25,
+    width: sw(75),
+    marginTop: sh(5),
     alignSelf: 'center',
   },
   buttonText: {
     color: 'white',
-    fontSize: 12,
+    fontSize: sf(12),
     textAlign: 'center',
-    margin: 10,
+    marginVertical: sh(2),
     backgroundColor: 'transparent',
   },
   container: {
     backgroundColor: darkGray,
     flex: 1,
-    paddingHorizontal: 50,
-    paddingTop: 50,
+    paddingHorizontal: sw(12),
+    paddingTop: sh(6),
   },
   error: {
     color: red,
-    fontSize: 12,
-  },
-  flexRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    fontSize: sf(12),
   },
   input: {
     borderColor: 'white',
     borderRadius: 20,
-    borderWidth: 1,
     backgroundColor: 'white',
     height: 40,
-    marginTop: 25,
+    marginTop: sh(5),
     textAlign: 'center',
-    color: 'black'
+    color: 'black',
   },
-  logo: {
-    color: 'white',
-    paddingVertical: 70,
-    textAlign: 'center',
+  icon: {
+    width: sw(50),
+    height: sh(30),
+    alignSelf: 'center',
   },
-  text: {
+  forgotPassword: {
     color: gray,
-    fontSize: 12,
+    fontSize: sf(12),
     textAlign: 'center',
-    marginTop: 5,
-  }
+    marginTop: sh(1),
+  },
+  createAccount: {
+    color: gray,
+    fontSize: sf(12),
+    alignSelf: 'center',
+    backgroundColor: 'transparent',
+    bottom: sh(2),
+    position: 'absolute'
+  },
 })

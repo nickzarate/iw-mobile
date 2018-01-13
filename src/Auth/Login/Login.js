@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, TextInput, Image } from 'react-native'
+import { Text, View, TextInput, Image, TouchableHighlight } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import styles from './styles'
 import connect from '../../config/connect'
@@ -16,7 +16,7 @@ const Login = (props) => {
 
   return (
     <View style={ styles.container }>
-      <Image source={ require('../../assets/icon.png') } style={{ width: 200, height: 200, alignSelf: 'center' }} />
+      <Image source={ require('../../assets/icon.png') } style={ styles.icon } />
       <Text style={ styles.error }>{ props.login.loginError }</Text>
       <TextInput
         autoCapitalize='none'
@@ -36,13 +36,13 @@ const Login = (props) => {
         style={ styles.input }
         underlineColorAndroid='transparent'
       />
-      <LinearGradient colors={ [red, red1, red2] } style={ styles.button }>
-        <Text style={ styles.buttonText }>{ 'Log In' }</Text>
-      </LinearGradient>
-      <View style={ styles.flexRow }>
-        <Text style={ styles.text }>{ 'Forgot Password?' }</Text>
-        <Text onPress={ () => props.navigation.navigate('Signup1') } style={ styles.text }>{ 'Create an Account' }</Text>
-      </View>
+      <TouchableHighlight onPress={ () => handleLogin() } activeOpacity={ 0.6 } underlayColor={ 'transparent' }>
+        <LinearGradient colors={ [red, red1, red2] } style={ styles.button }>
+          <Text style={ styles.buttonText }>{ 'Log In' }</Text>
+        </LinearGradient>
+      </TouchableHighlight>
+      <Text style={ styles.forgotPassword }>{ 'Forgot Password?' }</Text>
+      <Text onPress={ () => props.navigation.navigate('Signup1') } style={ styles.createAccount }>{ 'Create an Account' }</Text>
     </View>
   )
 }
@@ -51,6 +51,3 @@ export default connect({
   state: 'login',
   actions: { login }
 })(Login)
-
-      // <Text style={ styles.logo }>{ 'Fit Logo' }</Text>
-
